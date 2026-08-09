@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socia. | AI Analytics Dashboard</title>
+    <meta name="description"
+        content="AI-powered social media analytics dashboard. Get insights, sentiment, and topics from your data.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Socia<span class="dot">.</span></h1>
+            <p class="subtitle">AI-Powered Social Media Analytics</p>
+        </header>
+
+        <main>
+            <!-- System Status -->
+            <div id="status-card" class="card">
+                <div class="card-header">
+                    <h2>System Connectivity</h2>
+                    <div id="status-indicator" class="indicator offline"></div>
+                </div>
+                <div class="card-body">
+                    <p id="status-message">Checking API connection...</p>
+                </div>
+                <div class="card-footer mt-4">
+                    <button id="refresh-btn" class="btn btn-secondary">Check Status</button>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div id="upload-card" class="card">
+                <div class="card-header">
+                    <h2>Analyze Data</h2>
+                </div>
+                <div class="card-body">
+                    <div id="upload-error" class="alert alert-error"></div>
+                    <div id="drop-zone" class="upload-zone">
+                        <span class="upload-icon">📁</span>
+                        <p><strong>Click to upload</strong> or drag and drop</p>
+                        <p class="text-secondary" style="font-size: 0.875rem;">Supported: .csv, .xlsx, .json (max 5MB)
+                        </p>
+                        <input type="file" id="file-input" class="hidden" accept=".csv,.xlsx,.json">
+                    </div>
+                    <div id="upload-status" class="hidden">
+                        <p id="upload-filename" class="font-bold"></p>
+                        <div class="progress-container">
+                            <div id="upload-progress" class="progress-bar"></div>
+                        </div>
+                        <p id="upload-message" class="text-secondary text-sm">Uploading and analyzing...</p>
+                    </div>
+                </div>
+                <div class="card-footer mt-4">
+                    <button id="upload-btn" class="btn" disabled>Start Analysis</button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <section id="results-section" class="hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Analytics Report</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Executive Summary -->
+                        <div class="mb-8">
+                            <h3 class="text-sm uppercase tracking-wider text-secondary mb-2"
+                                style="font-size: 0.75rem; font-weight: 700;">Executive Summary</h3>
+                            <p id="result-summary" style="font-size: 1.1rem; line-height: 1.8;"></p>
+                        </div>
+
+                        <hr class="my-6"
+                            style="border: none; border-top: 1px solid var(--card-border); margin: 1.5rem 0;">
+
+                        <!-- Sentiment & Topics Grid -->
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <h3 class="mb-4" style="font-size: 1rem; margin-bottom: 1rem;">Sentiment Analysis</h3>
+                                <div id="result-sentiment"></div>
+                            </div>
+                            <div class="result-card">
+                                <h3 class="mb-4" style="font-size: 1rem; margin-bottom: 1rem;">Common Topics</h3>
+                                <div id="result-topics"></div>
+                            </div>
+                        </div>
+
+                        <hr class="my-6"
+                            style="border: none; border-top: 1px solid var(--card-border); margin: 1.5rem 0;">
+
+                        <!-- Insights & Recommendations -->
+                        <div class="mt-6">
+                            <h3 class="mb-4" style="font-size: 1rem; margin-bottom: 1rem;">Strategic Insights</h3>
+                            <div id="result-insights" class="text-secondary"></div>
+                        </div>
+
+                        <div class="mt-6">
+                            <h3 class="mb-4" style="font-size: 1rem; margin-bottom: 1rem;">Recommendations</h3>
+                            <div id="result-recommendations" class="text-secondary"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Socia Analytics. Rojina Safavi Sohi.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

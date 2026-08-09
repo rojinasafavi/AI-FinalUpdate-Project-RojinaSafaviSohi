@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SocialMediaIngestion",
+  "type": "object",
+  "properties": {
+    "platform": {
+      "type": "string",
+      "description": "The source platform (e.g., twitter, instagram, linkedin)"
+    },
+    "posts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SocialMediaPost"
+      },
+      "description": "List of posts ingested from the platform"
+    }
+  },
+  "required": [
+    "platform",
+    "posts"
+  ],
+  "$defs": {
+    "SocialMediaPost": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the post"
+        },
+        "text": {
+          "type": "string",
+          "description": "Content of the post"
+        },
+        "user": {
+          "type": "string",
+          "description": "Username or ID of the author"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time when the post was created in ISO format"
+        },
+        "likes": {
+          "type": "integer",
+          "default": 0,
+          "description": "Number of likes"
+        },
+        "replies": {
+          "type": "integer",
+          "default": 0,
+          "description": "Number of replies"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "user",
+        "timestamp"
+      ]
+    }
+  }
+}

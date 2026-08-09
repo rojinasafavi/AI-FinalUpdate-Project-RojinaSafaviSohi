@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env*
+
+# IDEs
+.vscode/
+.idea/
+
+# Data and Reports
+reports/
+data/cached_*.json
+
+# OS & Archives
+.DS_Store
+*.zip
+

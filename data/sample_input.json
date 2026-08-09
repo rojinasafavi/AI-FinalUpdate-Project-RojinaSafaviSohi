@@ -1,0 +1,25 @@
+{
+  "platform": "twitter",
+  "posts": [
+    {
+      "id": "1",
+      "text": "The new analytics dashboard is absolutely amazing! Very fast.",
+      "user": "user123",
+      "timestamp": "2023-10-01T12:00:00Z",
+      "likes": 10
+    },
+    {
+      "id": "2",
+      "text": "I can't even open the app. It keeps crashing on iOS 17. Fix this!",
+      "user": "angry_customer",
+      "timestamp": "2023-10-01T12:05:00Z",
+      "replies": 5
+    },
+    {
+      "id": "3",
+      "text": "Customer service took exactly 3 days to respond to my pricing query. Acceptable, but could be much better.",
+      "user": "neutral_nancy",
+      "timestamp": "2023-10-01T12:10:00Z"
+    }
+  ]
+}
